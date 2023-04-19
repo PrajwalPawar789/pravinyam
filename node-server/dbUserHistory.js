@@ -2,6 +2,8 @@ const { Pool, Client } = require('pg');
 let dbconfig = require('./dbconfig');
 const pool = new Pool(dbconfig);
 async function checkprevtime(username,timestamp){
+    
+    var current_timestamp = new Date();
 
     var currentdate = new Date(); 
     var datetime =  currentdate.getFullYear() + "-"+ (currentdate.getMonth()+1)  + "-" + currentdate.getDate() + " "  + currentdate.getHours() + ":"  + currentdate.getMinutes() + ":" + currentdate.getSeconds() + "." + currentdate.getMilliseconds();
